@@ -195,7 +195,9 @@ function get_cash($id)
                           </div>
                         </td>
                         <td>
-                          <button class="btn btn-danger">حذف</button>
+                        <a class="btn btn-danger" href="delete/properity.php?id=<?php echo $row['id']; ?>">
+                              حذف
+                          </a>
                         </td>
                 </div>
                 </td>

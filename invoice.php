@@ -363,6 +363,7 @@ return $row['name'];
             
             <h3>
               الاجمالي العام :
+              
               <?php  echo ($invoice_total + ($invoice_total*$prop['supervision_ratio']) / 100) ?>
 
             </h3>
@@ -461,30 +462,36 @@ return $row['name'];
   <script type="text/javascript">
     function add_new_row(section_id, properity_token, invoice_token) {
       var sec_id = 'section_' + section_id;
-      var new_row =  '<div class="row" style="border:1px solid grey;padding:10px;margin:10px">' +
-        '<input type="hidden" name="section_id[]" value="' + section_id + '"/>' +
-        '<input type="hidden" name="invoice_token[]" value="' + invoice_token + '"/>' +
-        '<input type="hidden" name="prop_token[]" value="' + properity_token + '"/>' +
-        '<div class="col-md-1"><input type="text" class="form-control" name="item_id[]" value="#" disabled></div>' +
-        '<div class="col-md-5"><input type="text" class="form-control" name="item_name[]" id="item_name"></div>' +
-        '<div class="col-md-1"><input type="text" class="form-control" name="standard[]" id="standard"></div>' +
-        '<div class="col-md-1"><input type="number" value="0" class="form-control" name="price[]" id="price"/></div>' +
- 
-        
+      var new_row =
+        '<div class="row" style="border:1px solid grey;padding:10px;margin:10px">' 
+        +
+        '<input type="hidden" name="section_id[]" value="' + section_id + '"/>' 
+        +
+        '<input type="hidden" name="invoice_token[]" value="' + invoice_token + '"/>'
+        +
+        '<input type="hidden" name="prop_token[]" value="' + properity_token + '"/>' 
+        +
+        '<div class="col-md-1"><input type="text" class="form-control" name="item_id[]" value="#"  disabled></div>' 
+        +
+        '<div class="col-md-5"><input type="text" class="form-control" name="item_name[]" id="item_name"></div>' 
+        +
+        '<div class="col-md-1"><input type="text" class="form-control" name="standard[]" id="standard"></div>' 
+        +
+        '<div class="col-md-1"><input type="number" value="0" class="form-control" name="price[]" id="price"/></div>' 
+        +
         ' <div class="col-md-1"><input type="number" class="form-control" name="quantity[]" id="quantity" > </div>'
         +
-        '<div class="col-md-1"><input type="text" class="form-control" id="total" name="total[]"></div>' +
-
+        '<div class="col-md-1"><input type="text" class="form-control" id="total" name="total[]"></div>' 
+        +
         '<div class="col-md-1"><a class="btn btn-danger" style="margin-bottom:5px"><img src="images/delete.png" style="width:100%;border-radius:0px"/></a></div>' 
-      
-        '<div class="col-md-1"><a id="view_notes" class="btn btn-primary" style="margin-bottom:5px"><img src="images/eye.png" style="width: 100%;border-radius:0px"/></a></div>'
         +
-       '<div class="row col-md-12 notes" style="display:none"><div class="col-md-12" style="margin-top:20px;margin-bottom:10px"><h3 style="color:#FD6C35">بيانات أضافية</h3></div><div class="col-md-5"><label>نسبة الخصم</label></div><div class="col-md-1"></div><div class="col-md-5"><label>قيمة الخصم</label></div><select class="col-md-5 form-control" name="discount_type" id="discount_type" style="margin-top:10px"><option value="0" selected>قيمة ثابتة</option><option value="1">نسبة مئوية</option></select><div class="col-md-1"></div><input type="text" class="col-md-5 form-control" id="discount_value" name="discount_value[]"style="margin-top:10px">                       <div class="col-md-12" style="margin-top:20px"> <label>ملاحظات البند</label><textarea class="col-md-12 form-control" rows="3"  name="notes[]" style="margin-top:10px;margin-bottom:10px;padding:10px" placeholder="أدخل ملاحظات البند"></textarea> </div>      </div>'
+        '<div class="col-md-1"><a class="btn btn-primary view_notes" style="margin-bottom:5px"><img src="images/eye.png" style="width:100%;border-radius:0px"/></a></div>'
         +
-
+        '<div class="row col-md-12 notes" style="display:none"><div class="col-md-12" style="margin-top:20px;margin-bottom:10px"><h3 style="color:#FD6C35">بيانات أضافية</h3></div><div class="col-md-5"><label>نسبة الخصم</label></div><div class="col-md-1"></div><div class="col-md-5"><label>قيمة الخصم</label></div><select class="col-md-5 form-control" name="discount_type" id="discount_type" style="margin-top:10px"><option value="0" selected>قيمة ثابتة</option><option value="1">نسبة مئوية</option></select><div class="col-md-1"></div><input type="text" class="col-md-5 form-control" id="discount_value" name="discount_value[]"style="margin-top:10px">                       <div class="col-md-12" style="margin-top:20px"> <label>ملاحظات البند</label><textarea class="col-md-12 form-control" rows="3"  name="notes[]" style="margin-top:10px;margin-bottom:10px;padding:10px" placeholder="أدخل ملاحظات البند"></textarea> </div></div>'
+         +
         '</div>';
-      $('#' + sec_id).append(new_row);
-    }
+         $('#' + sec_id).append(new_row);
+         }
     
   </script>
   
